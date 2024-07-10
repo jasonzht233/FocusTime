@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { colors } from './src/utils/colors';
 import { Focus } from './src/features/Focus';
+import {Timer} from './src/features/Timer'; 
 // import Constants from 'expo-constants';
 
 export default function App() {
@@ -18,11 +19,10 @@ export default function App() {
       {!currentSubject ? (
         <Focus addSubject={setCurrentSubject} />
       ) : (
-        <View>
-          <Text style={{ color: colors.white }}>
-            I am going to render the timer for {currentSubject}
-          </Text>
-        </View>
+        <Timer
+        focusSubject={currentSubject}
+        onTimerEnd={() => {}}
+        clearSubject={() => {}} />
       )}
     </SafeAreaView>
   );
